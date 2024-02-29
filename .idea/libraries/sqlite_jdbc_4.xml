@@ -1,17 +1,8 @@
 <component name="libraryTable">
   <library name="sqlite-jdbc 4">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../a4-Cristina-Pop20/sqlite-jdbc 4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../a4-Cristina-Pop20/slf4j-simple-1.6.1 1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../a4-Cristina-Pop20/slf4j-api-1.6.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../librarii-javafx/javafx.web.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../librarii-javafx/javafx.swing.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../librarii-javafx/javafx.media.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../librarii-javafx/javafx.graphics.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../librarii-javafx/javafx.fxml.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../librarii-javafx/javafx.controls.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../librarii-javafx/javafx.base.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../librarii-javafx/javafx-swt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../libraries/slf4j-api-1.7.36 (1).jar!/" />
+      <root url="jar://$PROJECT_DIR$/../libraries/sqlite-jdbc-3.44.1.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

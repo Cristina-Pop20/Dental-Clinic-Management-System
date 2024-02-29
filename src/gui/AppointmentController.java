@@ -85,26 +85,7 @@ public class AppointmentController {
 
     }
 
-//    @FXML
-//    void searchOnKeyTyped(KeyEvent event) {
-//        String searchText=searchTextField.getText();
-//        if(searchText.equals(""))
-//            populateList();
-//        else
-//        {
-//          //  ObservableList<Appointment> filterAppointments=service.;
-//            Integer idcc =Integer.parseInt(searchTextField.getText());
-//            Iterable<Appointment> appointmentIterable = service.(idcc);;
-//
-//            // Convert the iterable to an ObservableList
-//            ObservableList<Appointment> appointmentList = FXCollections.observableArrayList();
-//            appointmentIterable.forEach(appointmentList::add);
-//
-//            // Set the items in the ListView
-//            appointmentsListView.setItems(appointmentList);
-//
-//        }
-//    }
+
 
 
 }

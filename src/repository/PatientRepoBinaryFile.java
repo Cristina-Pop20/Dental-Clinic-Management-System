@@ -23,29 +23,6 @@ public class PatientRepoBinaryFile extends FileRepo<Integer, Patient> {
             throw new RuntimeException(e);
         }
     }
-//    public void readFromFile() {
-//        try {
-//            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(this.filename));
-//            try {
-//                Object obj = ois.readObject();
-//                if (!(obj instanceof Map)) {
-//                    throw new RuntimeException("Invalid data format in the file");
-//                }
-//
-//                super.elements.putAll((Map)obj);
-//            }
-//            catch (Throwable var5) {
-//                try {
-//                    ois.close();
-//                } catch (Throwable var4) {
-//                    var5.addSuppressed(var4);
-//                }
-//                throw var5;
-//            }
-//        }catch (ClassNotFoundException | IOException var6) {
-//            throw new RuntimeException(var6);
-//        }
-//    }
 
     @Override
     public void writeToFile() {
