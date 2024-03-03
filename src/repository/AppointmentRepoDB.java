@@ -8,7 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class AppointmentRepoDB extends DBRepo<Integer, Appointment> {
-    public MemoryRepo<Patient,Integer> PatientRepo=new MemoryRepo<>();
+    public MemoryRepo<Patient, Integer> PatientRepo = new MemoryRepo<>();
+
     public AppointmentRepoDB(String tableName) {
         super(tableName);
         getData();
@@ -26,8 +27,7 @@ public class AppointmentRepoDB extends DBRepo<Integer, Appointment> {
 
                     String patient = resultSet.getString("patient");
                     String[] tokens = patient.split("[,]");
-                    String name=tokens[0].trim();//patient_name
-                    // Extract only the numeric part of the id and age
+                    String name = tokens[0].trim();//patient_name
                     String idString = tokens[1].trim().replaceAll("\\D", ""); // Remove non-numeric characters
                     String ageString = tokens[2].trim().replaceAll("\\D", ""); // Remove non-numeric characters
                     Integer IDp = Integer.parseInt(idString); // patient_id
@@ -36,15 +36,13 @@ public class AppointmentRepoDB extends DBRepo<Integer, Appointment> {
                     String date = resultSet.getString("date");
                     String time = resultSet.getString("time");
 
-                    elements.put(id,new Appointment(id,new Patient(IDp,name,age),date,time));
+                    elements.put(id, new Appointment(id, new Patient(IDp, name, age), date, time));
 
                 }
             }
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
-        finally {
+        } finally {
             try {
                 closeConnection();
             } catch (SQLException e) {
@@ -56,8 +54,7 @@ public class AppointmentRepoDB extends DBRepo<Integer, Appointment> {
 
     @Override
     public void addItem(Appointment elem) {
-        try
-        {
+        try {
             openConnection();
             String insertString = "INSERT INTO " + tableName + " VALUES (?, ?, ?,?);";
             try (PreparedStatement ps = conn.prepareStatement(insertString)) {

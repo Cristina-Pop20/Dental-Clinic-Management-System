@@ -27,11 +27,9 @@ public class PatientRepoDB extends DBRepo<Integer, Patient> {
                     super.elements.put(id, patient);
                 }
             }
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
-        finally {
+        } finally {
             try {
                 closeConnection();
             } catch (SQLException e) {
@@ -40,10 +38,10 @@ public class PatientRepoDB extends DBRepo<Integer, Patient> {
 
         }
     }
+
     @Override
-    public void addItem(Patient elem){
-        try
-        {
+    public void addItem(Patient elem) {
+        try {
             openConnection();
             String insertString = "INSERT INTO " + tableName + " VALUES (?, ?, ?);";
             try (PreparedStatement ps = conn.prepareStatement(insertString)) {

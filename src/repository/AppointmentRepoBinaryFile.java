@@ -6,7 +6,8 @@ import domain.Patient;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
-public class AppointmentRepoBinaryFile extends FileRepo<Integer, Appointment>   {
+
+public class AppointmentRepoBinaryFile extends FileRepo<Integer, Appointment> {
     public AppointmentRepoBinaryFile(String filename) {
         super(filename);
         //this.readFromFile();
@@ -14,8 +15,7 @@ public class AppointmentRepoBinaryFile extends FileRepo<Integer, Appointment>   
 
     @Override
     public void readFromFile() {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename)))
-        {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
             super.elements = (Map<Integer, Appointment>) ois.readObject();
         } catch (IOException e) {
             System.err.println("File not found: " + e.getMessage());
@@ -31,8 +31,7 @@ public class AppointmentRepoBinaryFile extends FileRepo<Integer, Appointment>   
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(this.filename));
             oos.writeObject(this.elements);
             oos.close();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.err.println("File not found: " + e.getMessage());
         }
     }

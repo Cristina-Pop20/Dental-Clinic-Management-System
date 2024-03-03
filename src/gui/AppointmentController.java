@@ -32,10 +32,9 @@ public class AppointmentController {
         appointmentsListView.setItems(appointmentList);
     }
 
-    public void initialize(){
+    public void initialize() {
         populateList();
     }
-
 
 
     @FXML
@@ -57,35 +56,34 @@ public class AppointmentController {
 
     @FXML
     void addAppointment(ActionEvent event) {
-        Integer id =Integer.parseInt(idAppointmentTextField.getText());
-        Integer idP =Integer.parseInt(idPatientTextField.getText());
-        String date=dateAppointmentTextField.getText();
-        String time=timeAppointmentTextField.getText();
-        service.addAppointment(id,idP,date,time);
+        Integer id = Integer.parseInt(idAppointmentTextField.getText());
+        Integer idP = Integer.parseInt(idPatientTextField.getText());
+        String date = dateAppointmentTextField.getText();
+        String time = timeAppointmentTextField.getText();
+        service.addAppointment(id, idP, date, time);
         populateList();
 
     }
 
     @FXML
     void removeAppointment(ActionEvent event) {
-        Integer id =Integer.parseInt(idAppointmentTextField.getText());
+        Integer id = Integer.parseInt(idAppointmentTextField.getText());
         service.deleteAppointment(id);
         populateList();
     }
+
     @FXML
     void updateAppointment(ActionEvent event) {
-        Integer id =Integer.parseInt(idAppointmentTextField.getText());
-        Integer idP =Integer.parseInt(idPatientTextField.getText());
-        String date=dateAppointmentTextField.getText();
-        String time=timeAppointmentTextField.getText();
-        Patient patient=service.getPatientById(idP);
-        service.updateAppointment(id,patient,date,time);
+        Integer id = Integer.parseInt(idAppointmentTextField.getText());
+        Integer idP = Integer.parseInt(idPatientTextField.getText());
+        String date = dateAppointmentTextField.getText();
+        String time = timeAppointmentTextField.getText();
+        Patient patient = service.getPatientById(idP);
+        service.updateAppointment(id, patient, date, time);
         populateList();
 
 
     }
-
-
 
 
 }

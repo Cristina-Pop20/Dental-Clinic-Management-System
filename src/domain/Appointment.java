@@ -1,18 +1,20 @@
 package domain;
+
 import domain.Patient;
 
 import java.io.Serializable;
 
-public class Appointment implements Serializable,Identifiable<Integer>{
+public class Appointment implements Serializable, Identifiable<Integer> {
     private Integer id;
     private Patient patient;
     private String date;
     private String time;
-    public Appointment(Integer id,Patient patient,String date,String time){
-        this.id=id;
-        this.patient=patient;
-        this.date=date;
-        this.time=time;
+
+    public Appointment(Integer id, Patient patient, String date, String time) {
+        this.id = id;
+        this.patient = patient;
+        this.date = date;
+        this.time = time;
     }
 
     @Override

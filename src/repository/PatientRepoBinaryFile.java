@@ -14,8 +14,7 @@ public class PatientRepoBinaryFile extends FileRepo<Integer, Patient> {
 
     @Override
     public void readFromFile() {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename)))
-        {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
             super.elements = (Map<Integer, Patient>) ois.readObject();
         } catch (IOException e) {
             System.err.println("File not found: " + e.getMessage());

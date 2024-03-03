@@ -26,16 +26,16 @@ public class PatientController {
     @FXML
     private TextField searchTextField;
 
-    void populateList(){
-        Iterable<Patient> patientIterable= service.getAllPatients();
+    void populateList() {
+        Iterable<Patient> patientIterable = service.getAllPatients();
         ObservableList<Patient> patientList = FXCollections.observableArrayList();
         patientIterable.forEach(patientList::add);
         patientsListView.setItems(patientList);
     }
-    public void  initialize(){
+
+    public void initialize() {
         populateList();
     }
-
 
 
     @FXML
@@ -56,27 +56,28 @@ public class PatientController {
 
     @FXML
     void addPatient(ActionEvent event) {
-        Integer id =Integer.parseInt(idPatientTextFiled.getText());
-        String name=namePatientTextField.getText();
-        Integer age =Integer.parseInt(agePatientTextField.getText());
-        service.addPatient(id,name,age);
+        Integer id = Integer.parseInt(idPatientTextFiled.getText());
+        String name = namePatientTextField.getText();
+        Integer age = Integer.parseInt(agePatientTextField.getText());
+        service.addPatient(id, name, age);
         populateList();
 
     }
 
     @FXML
     void removePatient(ActionEvent event) {
-        Integer id =Integer.parseInt(idPatientTextFiled.getText());
+        Integer id = Integer.parseInt(idPatientTextFiled.getText());
         service.deletePatient(id);
         populateList();
 
     }
+
     @FXML
     void updatePatient(ActionEvent event) {
-        Integer id =Integer.parseInt(idPatientTextFiled.getText());
-        String name=namePatientTextField.getText();
-        Integer age =Integer.parseInt(agePatientTextField.getText());
-        service.updatePatient(id,name,age);
+        Integer id = Integer.parseInt(idPatientTextFiled.getText());
+        String name = namePatientTextField.getText();
+        Integer age = Integer.parseInt(agePatientTextField.getText());
+        service.updatePatient(id, name, age);
         populateList();
 
 
@@ -84,7 +85,7 @@ public class PatientController {
 
     @FXML
     void searchOnKeyTyped(KeyEvent event) {
-        String searchText=searchTextField.getText();
+        String searchText = searchTextField.getText();
     }
 
 }
